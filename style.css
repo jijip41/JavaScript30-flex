@@ -1,0 +1,114 @@
+html {
+  background: antiquewhite;
+  font-family: 'helvetica neue';
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 5px rgb(83, 83, 69, 0.1);
+  flex: 1;
+  transition: font-size 0.7s cubic-bezier(0.075, -0.12, 0.65, -0.1),
+    flex 0.7s cubic-bezier(0.075, -0.12, 0.65, -0.1), background 0.2s;
+}
+
+.box1 {
+  background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+  background-size: cover;
+  background-position: center;
+}
+
+.box2 {
+  background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+  background-size: cover;
+  background-position: center;
+}
+
+.box3 {
+  background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+  background-size: cover;
+  background-position: center;
+}
+
+.box4 {
+  background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+  background-size: cover;
+  background-position: center;
+}
+
+.box5 {
+  background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+  background-size: cover;
+  background-position: center;
+}
+
+p {
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+  font-size: 1em;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box > *:first-child {
+  transform: translateY(-100%);
+}
+.box.open-box > *:first-child {
+  transform: translateY(0);
+}
+.box > *:last-child {
+  transform: translateY(100%);
+}
+.box.open-box > *:last-child {
+  transform: translateY(0);
+}
+
+.box > * {
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.box p:nth-child(2) {
+  font-size: 2em;
+}
+
+.box.open {
+  flex: 5;
+  font-size: 40px;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+  }
+  p {
+    margin: 3px;
+  }
+}
