@@ -2,14 +2,16 @@
 
 const box = document.querySelectorAll('.box')
 
-box.forEach(e => e.addEventListener('mouseover', opneClassName));
+box.forEach(e => e.addEventListener('click', openClassName));
 
 box.forEach(e => e.addEventListener('transitionend', letterBack));
 
-function opneClassName() {
-  this.classList.add('open');
+function openClassName() {
+  this.classList.toggle('open');
 }
 
-function letterBack() {
-  this.classList.add('open-box');
+function letterBack(e) {
+  if(e.propertyName.includes('flex')) {
+    this.classList.toggle('open-box');
+  }
 }
